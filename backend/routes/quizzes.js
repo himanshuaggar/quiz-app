@@ -24,7 +24,7 @@ router.post('/:id/submit', async (req, res) => {
     const quiz = await Quiz.findById(req.params.id);
     if (!quiz) return res.status(404).send('Quiz not found');
 
-    const { answers } = req.body;
+    const { answers, name } = req.body;
     let score = 0;
     const correctAnswers = [];
 
@@ -35,7 +35,7 @@ router.post('/:id/submit', async (req, res) => {
         }
     });
 
-    const leaderboardEntry = new Leaderboard({ quizId: quiz._id, name: 'User', score });
+    const leaderboardEntry = new Leaderboard({ quizId: quiz._id, name, score });
     await leaderboardEntry.save();
 
     res.send({ score, correctAnswers });
