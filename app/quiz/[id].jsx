@@ -61,7 +61,7 @@ export default function QuizScreen() {
                   answers[index] === option && styles.selectedOption,
                 ]}
                 onPress={() => setAnswers({ ...answers, [index]: option })}
-                rippleColor="rgba(0, 0, 0, .32)"
+                rippleColor="rgba(0, 0, 0)"
               >
                 <Text style={styles.optionText}>{option}</Text>
               </TouchableRipple>

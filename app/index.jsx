@@ -45,7 +45,7 @@ export default function HomeScreen() {
         renderItem={({ item }) => (
           <TouchableRipple
             onPress={() => startQuiz(item._id)}
-            rippleColor="rgba(0, 0, 0, .32)"
+            rippleColor="rgba(0, 0, 0)"
           >
             <Card style={styles.card}>
               <Card.Content>
